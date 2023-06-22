@@ -1,0 +1,94 @@
+<!--pages/addLocation/addLocation.wxml-->
+<form bindsubmit="saveAddress">
+<view class="weui-cells weui-cells_after-title">
+<!--收货人-->
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+      <view class="weui-label">收货人</view>
+    </view>
+    <view class="weui-cell__bd">
+      <input class="weui-input" name="consignee" placeholder="请输入取件人姓名" />
+    </view>
+  </view>
+<!--手机号-->
+  <view class="weui-cell weui-cell_input">
+    <view class="weui-cell__hd">
+
+      <view class="weui-label">手机号</view>
+
+    </view>
+
+    <view class="weui-cell__bd">
+
+      <input class="weui-input" name="mobile" placeholder="请输入取件人手机号" />
+
+    </view>
+
+  </view>
+
+<!--收货时间-->
+
+  <view class="weui-cell weui-cell_select">
+
+    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+
+      <view class="weui-label">收货时间</view>
+
+    </view>
+
+    <view class="weui-cell__bd">
+
+      <picker bindchange="bindTransportDayChange" value="{{transportIndex}}" range="{{transportValues}}">
+
+        <view class="weui-select weui-select_in-select-after">{{transportValues[transportIndex]}}</view>
+
+        <input name="transportDay" hidden="true" value="{{transportValues[transportIndex]}}" />
+
+      </picker>
+
+    </view>
+
+  </view>
+
+<!-- 省市县 -->
+
+<view class="weui-cell weui-cell_select">
+
+    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+
+    <view class="weui-label">接受地址</view>
+
+    </view>
+
+    <view class="weui-cell__bd">
+
+    <picker mode="region" bindchange="bindRegionChange">{{myregion[0]+myregion[1]+myregion[2]}}
+
+</picker>
+
+    </view>
+
+</view>
+
+<!--详细地址-->
+
+<view class="weui-cell weui-cell_input">
+
+<view class="weui-cell__hd">
+
+  <view class="weui-label">详细地址</view>
+
+</view>
+
+<view class="weui-cell__bd">
+
+  <input class="weui-input" name="detailAddress" placeholder="详细地址" />
+
+</view>
+
+</view>
+
+</view>
+
+<button class="weui-btn" type="primary" form-type="submit">保存</button>
+</form>

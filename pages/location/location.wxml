@@ -1,0 +1,57 @@
+<!--pages/location/location.wxml-->
+
+
+<scroll-view class="scroll" scroll-y="true">
+<view wx:for="{{addressList}}" wx:key="key">
+
+  <view class="userblock">
+
+    <view class="ui-list-item-info">{{item.consignee}}
+
+      <text decode="{{true}}" space="{{true}}">  </text> {{item.mobile}}
+
+    </view>
+
+    <view class="ui-list-item-address">
+
+     <p>省城区： {{item.myregion[0]+item.myregion[1]+item.myregion[2]}}</p>
+
+     <p class="ui-list-item-del">
+
+    <radio-group bindchange="radioChange" class="b">
+
+    <radio wx:for-item="item" wx:key="mobile" value="{{item.mobile}}" bindtap="change" checked="{{item.checked}}" class="bb"></radio>
+
+    </radio-group>
+
+    </p>
+
+    </view>
+
+    <view class="ui-list-item-address">
+
+       详细地址：{{item.detailAddress}}
+
+</view>
+
+    <view class="ui-list-item-time">
+
+      <p> 收货时间：{{item.transportDay}}</p>
+
+      <p class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</p>
+
+    </view>
+
+    <view class="separate"></view>
+
+  </view>
+
+</view>
+
+</scroll-view>
+
+<view class="add-address" bindtap="addAddress">
+
+<image class="add-img" src="../../icons/add1.png"></image>新增地址
+
+</view>

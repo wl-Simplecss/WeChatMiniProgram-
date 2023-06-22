@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<view class="index_container">
+  <view class='head'>
+    <view class='address'>
+      <text class='icon iconfont icon-dingwei'></text>
+      <text>{{'吉林大学'}}</text>
+      <text class='icon iconfont icon-row-right-copy'></text>
+    </view>
+  </view>
+  <view class="nav">
+  <swiper class="swiper" indicator-dots autoplay interval="3000">
+    <swiper-item>
+      <image src="../../images/a.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/b.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/c.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>
+  <view class='near-store'>
+    <text class="near-store-text">附近商家</text>
+  </view>
+  <view class='tabs' id='tabs' bindtap='getTabsInfo'>
+    <view class="tab {{sortIndex==0?'active':''}}" data-index="0">
+      <text data-index="0">{{sortItem[sortListIndex]}}</text>
+      <text class='icon iconfont icon-row-bottom-copy' data-index="0"></text>
+    </view>
+    <view class="tab {{sortIndex==1?'active':''}}" data-index="1">销量最高</view>
+    <view class="tab {{sortIndex==2?'active':''}}" data-index="2">速度最快</view>
+    <view class="filter-button" bindtap="onFilterTap">
+      <text data-index="3">筛选</text>
+      <text class='icon iconfont icon-shaixuan' data-index="3"></text>
+    </view>
+  </view>
+  <view class='tabs tabs-fixed' wx:if="{{showFixed}}" bindtap='getFixedTabsInfo'>
+    <view class="tab {{sortIndex==0?'active':''}}" data-index="0">
+      <text data-index="0">{{sortItem[sortListIndex]}}</text>
+      <text class="icon iconfont {{showSort?'icon-row-up-copy':'icon-row-bottom-copy'}}" data-index="0"></text>
+    </view>
+    <view class="tab {{sortIndex==1?'active':''}}" data-index="1">销量最高</view>
+    <view class="tab {{sortIndex==2?'active':''}}" data-index="2">速度最快</view>
+    <view class="filter-button" bindtap="onFilterTap">
+      <text data-index="3">筛选</text>
+      <text class='icon iconfont icon-shaixuan' data-index="3"></text>
+    </view>
+    <view class='sort' catchtouchmove="move" style='height:{{sortHeight}}px' bindtap='selectSort' wx:if="{{showSort}}">
+      <view class="sort-item {{sortListIndex==index?'active':''}}" wx:for="{{sortItem}}" data-sortIndex="{{index}}" wx:key="item">{{item}}</view>
+    </view>
+  </view>
+  <view class='store-list'>
+    <store-list wx:for='{{storeList}}' wx:key="item.storeId" store-info="{{item}}" bind:select="select" data-id="{{item.storeId}}" class='store-item'></store-list>
+  </view>
+  <view class='footer'>暂无更多~~</view>
+</view>
+<view class="filter-cover" wx:if="{{showFilter}}" catchtap="cancelFilter">
+  <!-- filter-container 作为弹出层的内容容器 -->
+  <view class="filter-container" catchtap="stopPropagation">
+    <!-- 距离筛选 -->
+    <view class="filter-group">
+      <text class="group-title">距离</text>
+      <view class="option-list">
+        <block wx:for="{{distanceOptions}}" wx:key="item">
+          <view class="option-item {{distanceSelectedIndex==index?'selected':''}}" data-type="distance" data-index="{{index}}" catchtap="onFilterOptionTap">{{item}}</view>
+        </block>
+      </view>
+    </view>
+    <!-- 配送费筛选 -->
+    <view class="filter-group">
+      <text class="group-title">配送费</text>
+      <view class="option-list">
+        <block wx:for="{{deliveryFeeOptions}}" wx:key="item">
+          <view class="option-item {{deliveryFeeSelectedIndex==index?'selected':''}}" data-type="deliveryFee" data-index="{{index}}" catchtap="onFilterOptionTap">{{item}}</view>
+        </block>
+      </view>
+    </view>
+    <!-- 送达时间筛选 -->
+    <view class="filter-group">
+      <text class="group-title">送达时间</text>
+      <view class="option-list">
+        <block wx:for="{{deliveryTimeOptions}}" wx:key="item">
+          <view class="option-item {{deliveryTimeSelectedIndex==index?'selected':''}}" data-type="deliveryTime" data-index="{{index}}" catchtap="onFilterOptionTap">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/Coupon/Coupon.wxml-->
+<view class="page">
+	<view class="page__bd">
+		<radio-group bindchange="radioChange">
+			<label wx:for="{{items}}" wx:key="{{item.value}}">
+				<view class="wehx-card_box wehx-two">
+					<view class="weui-cell wehx-box_top">
+						<view class="weui-cell__hd wehx-box_left iconfont-white">
+							<text class="wehx_amount">{{item.number}}</text>
+							<span class="wehx_unit"> 元</span>
+						</view>
+						<view class="weui-cell__bd">
+							<view class="wehx-title iconfont-white">{{item.name}}</view>
+							<view class="wehx-date iconfont-white">{{item.time}}</view>
+				  </view>
+						<radio value="{{item.value}}" checked="true" color="#2ea7e0" />
+					</view>
+          
+          <view class="weui-cell wehx-box_bottom">
+					</view>
+				</view>
+			</label>
+		</radio-group>
+		<!-- 底部按钮 -->
+		<view class="footer" style="background:#ffffff;position:fixed;bottom:0px;width:100%;">
+			<view class='weui-cell'>
+				<view class="weui-cell__hd"></view>
+				<view class="weui-cell__bd">
+					已选择<text class="color-primary">{{coupname}}</text> ,可抵扣<text class="color-primary">{{resultvalue}}元</text>
+				</view>
+				<view class="weui-cell__ft">
+					<button class="footer-btn weui-btn_mini" bindtap="storeCoupon" data-submit-type="send" hover-class="footer-border_hover">确认领取</button>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

@@ -1,0 +1,26 @@
+/* pages/user/user.wxss */
+
+.head {
+  background-color: #ffd161;
+  height: 250rpx;
+}
+.head .head_img{
+  border-radius: 50%;
+}
+.userinfo-avatar{
+  overflow: hidden;
+  width: 180rpx;
+  height: 180rpx;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left:38% ;
+}
+
+.userMess{
+  display:inline-block;
+  margin-left: 45%;
+}
+
+
+
+

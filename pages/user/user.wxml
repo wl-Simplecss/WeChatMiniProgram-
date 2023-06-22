@@ -1,0 +1,109 @@
+<view class='user_container'>
+  <view class="head">
+
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userInfo">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="userMess">
+        <open-data type="userNickName" ></open-data>
+      </view>
+      </view>
+    </block>
+
+
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+
+    <block wx:else>
+      <view class="userInfo">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <image src="../../images/nav.png"></image>
+      </view>
+      <view class="userMess">
+        <text>微信用户</text>
+      </view>
+      </view>
+    </block>
+  </view>
+
+
+
+  
+  <view class="weui-panel">
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg">
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="getCoupon">
+            <view class="weui-cell__hd">
+              <icon class='icon iconfont icon-hongbao-m' style='font-size:40rpx;margin-right:30rpx'></icon>
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view style='font-size:28rpx'>美团红包</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+
+
+
+          <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <icon class='icon iconfont icon-iconfontdizhi' style='font-size:40rpx;margin-right:30rpx'></icon>
+            </view>
+            <view class="weui-cell__bd weui-cell_primary" bindtap="myLocation">
+              <view style='font-size:28rpx'>我的地址</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+
+
+          <view class="weui-cell weui-cell_access" bindtap="getInvite" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <icon class='icon iconfont icon-liwuhuodong' style='font-size:40rpx;margin-right:30rpx'></icon>
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view style='font-size:28rpx'>邀请有奖</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+
+          <view class="weui-cell weui-cell_access" bindtap="inputFram" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <icon class='icon iconfont icon-row-up-copy' style='font-size:40rpx;margin-right:30rpx'></icon>
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view style='font-size:28rpx'>邀请有奖</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+
+
+          <view class="weui-cell weui-cell_access" bindtap="getPhoneNum" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <icon class='icon iconfont icon-tubiao210' style='font-size:40rpx;margin-right:30rpx'></icon>
+            </view>
+            <view class="weui-cell__hd weui-cell_primary">
+              <view style='font-size:28rpx'>客服电话</view>
+            </view>
+            <view class="weui-cell__bd" style='color:#ffd161;margin-left:20rpx;font-size:26rpx'>
+              <view>101-197-177</view>
+            </view>
+            <view class="weui-cell__ft" style='font-size:24rpx'>9:00-23:00</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  
+  <view class="weui-panel">
+    <view class="weui-cell weui-cell_access" bindtap="logout" hover-class="weui-cell_active">
+      <view class='weui-cell__bd' style='font-size:28rpx;text-align:center'>退出账号</view>
+    </view>
+  </view>
+</view>

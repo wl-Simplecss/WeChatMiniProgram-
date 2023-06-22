@@ -1,0 +1,14 @@
+.index {
+  padding: 20rpx;
+}
+
+.back-btn {
+  position: fixed;
+  top: 40rpx;
+  left: 40rpx;
+}
+
+.content {
+  margin-top: 100rpx;
+  text-align: center;
+}

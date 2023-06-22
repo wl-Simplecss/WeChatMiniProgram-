@@ -1,0 +1,213 @@
+page {
+  background-color: rgb(255, 255, 255);
+}
+
+.icon {
+  margin: 0 10rpx;
+}
+
+.head {
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.head icon {
+  font-size: 30rpx;
+}
+
+.address {
+  width: 40%;
+  text-align: center;
+}
+
+.search {
+  box-sizing: border-box;
+  width: 60%;
+  padding: 0rpx 20rpx;
+  margin: 0rpx 20rpx;
+  border-radius: 30rpx;
+  background-color: #eee;
+}
+
+.nav, .swiper {
+  height: 400rpx;
+  margin-top: 30rpx;
+}
+
+.nav-slide {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 28rpx;
+  height: 300rpx;
+}
+
+.nav-slide .item {
+  width: 20%;
+  height: 150rpx;
+}
+
+
+.near-store {
+  font-size: 30rpx;
+  font-weight: 700;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: relative;
+}
+
+.near-store {
+  margin: 20rpx 0;
+}
+
+.near-store-text {
+  position: relative;
+}
+
+.near-store-text:after, .near-store-text:before {
+  background: #000;
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 80rpx;
+}
+
+.near-store-text:before {
+  left: -100rpx;
+}
+
+.near-store-text:after {
+  right: -100rpx;
+}
+
+.tabs {
+  display: flex;
+  font-size: 28rpx;
+  color: #333;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom: 20rpx;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.tabs .tab {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.tabs .active {
+  color: #ffd161;
+}
+
+.tabs .icon {
+  color: #000;
+}
+
+.tabs-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.sort {
+  position: absolute;
+  top: 80rpx;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(188, 188, 188, 0.3);
+}
+
+.sort .sort-item {
+  border-top: 1px solid #eee;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 50rpx;
+  background-color: #fff;
+}
+
+.sort .active {
+  color: #ffd161;
+}
+
+.footer {
+  font-size: 28rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.footer:after, .footer:before {
+  background: #aaa;
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 240rpx;
+}
+
+.footer:before {
+  left: 30rpx;
+}
+
+.footer:after {
+  right: 30rpx;
+}
+/* 弹出层的样式 */
+.filter-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* 半透明黑色遮罩 */
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-radius: 5rpx;
+  padding: 20rpx;
+  box-shadow: 0 10rpx 20rpx rgba(0,0,0,0.1);
+}
+
+.group-title {
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.option-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.option-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+  min-width: 90rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+  border: 1rpx solid #EEE;
+  border-radius: 30rpx;
+}
+
+.option-item.selected {
+  color: #FFF;
+  background-color: #FFC900;
+  border: none;
+}

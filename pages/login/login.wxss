@@ -1,0 +1,39 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 70rpx;
+  border-radius: 50%;
+}
+
+
+.usermotto{
+  text-align: center;
+}
+
+.userBut {
+  display: inline-block;
+  padding: 4rpx;
+  width: 300rpx;
+  height: 100rpx;
+  background-color: #05dd5f;
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.button-hover {
+  background-color:rgb(229, 255, 0);
+}
+
+
+

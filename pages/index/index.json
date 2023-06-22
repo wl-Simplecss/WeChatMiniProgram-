@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "store-list": "/components/store-list/store-list"
+  }
+}
