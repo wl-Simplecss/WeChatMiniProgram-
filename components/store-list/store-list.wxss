@@ -1,0 +1,127 @@
+@import '/style/iconfont.wxss';
+.store{
+  margin-bottom: 40rpx;
+}
+.store-info {
+  display: flex;
+  height: 160rpx;
+}
+
+.store-img {
+  width: 180rpx;
+  margin: 0 20rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.store-img image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.info {
+  font-size: 26rpx;
+  width: 100%;
+}
+
+.info .store-name {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.icon-xingxing-copy, .icon-xing1 {
+  color: #ffcc01;
+}
+
+.icon-xingxing-copy-copy {
+  color: #eee;
+}
+
+.info .score {
+  margin-left: 10rpx;
+}
+
+.info .saleMonth {
+  margin-left: 30rpx;
+}
+
+.info .delTime {
+  float: right;
+  margin-right: 20rpx;
+}
+
+.info .priceInfo text {
+  padding: 0 14rpx;
+  border-right: 2px solid #eee;
+}
+
+.info .priceInfo text:last-child {
+  border-right: none;
+}
+
+.info .priceInfo text:first-child {
+  padding-left: 0;
+}
+
+.actives {
+  display: flex;
+}
+
+.actives-temp {
+  width: 200rpx;
+}
+
+.actice-item .item {
+  display: flex;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+  color: #333;
+}
+
+.actice-item .active-icon {
+  width: 40rpx;
+  height: 40rpx;
+  color: #fff;
+  text-align: center;
+  margin-right: 10rpx;
+}
+
+.actice-item .active-text {
+  width: 440rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.manjian {
+  background-color: #ff8dc1;
+}
+
+.xindian {
+  background-color: #75fb6d;
+}
+
+.zhekou {
+  background-color: #ff111a;
+}
+
+.daijinquan {
+  background-color: #fbd305;
+}
+
+.xinyonghu {
+  background-color: #f93fe9;
+}
+
+.peisong {
+  background-color: #67e1ef;
+}
+
+.lingdaijin {
+  background-color: #56fb43;
+}
+
+.zengsong {
+  background-color: #fd86ed;
+}

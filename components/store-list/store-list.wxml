@@ -1,0 +1,31 @@
+<view class='store'>
+  <view class='store-info' bindtap="selectStore">
+    <view class='store-img'>
+      <image src='{{storeInfo.storeImgUrl}}'></image>
+    </view>
+    <view class='info'>
+      <view class='store-name'>{{storeInfo.storeName}}</view>
+      <view>
+        <text class='icon iconfont {{item}}' wx:for="{{stars}}" wx:key="index"></text>
+        <text class='score'>{{storeInfo.score}}</text>
+        <text class='saleMonth'>月售{{storeInfo.saleMonth}}</text>
+        <text class='delTime'>{{storeInfo.delTime}}分钟</text>
+      </view>
+      <view class='priceInfo'>
+        <text>起送￥{{storeInfo.minDelPrice}}</text>
+        <text>配送￥{{storeInfo.delPrice}}</text>
+        <text>人均￥{{storeInfo.averagePrice}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='actives'>
+    <view class='actives-temp'></view>
+    <view class='actice-item' bindtap='showActive'>
+      <view class='item' wx:for="{{storeInfo.actives}}" wx:if='{{index<2||showAll}}' wx:key="item.activeId">
+        <view class='active-icon {{activesInfo[item.activeId].class}}'>{{activesInfo[item.activeId].text}}</view>
+        <view class='active-text'>{{item.acticeText}}</view>
+        <text class="icon iconfont {{showAll?'icon-row-up-copy':'icon-row-bottom-copy'}}" wx:if='{{storeInfo.actives.length>2&&index==0}}'></text>
+      </view>
+    </view>
+  </view>
+</view>
